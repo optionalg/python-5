@@ -35,7 +35,7 @@ def menu():
 	print "| 3: Network range generator"
 	print "| Any other choice: quit program"
 	print "|__________________________________"
-	choice = raw_input("\nChoose the desired exercise [1/2/3]: ")
+	choice = raw_input("\nChoose the desired exercise [1/2/3/*]: ")
 	if choice == "1":
 		dec2bin()
 	elif choice == "2":
@@ -55,7 +55,7 @@ def dec2bin():
 	sol_dec2bin = raw_input("Press Enter for the solution, any other key for the menu: ")
 	if bool(sol_dec2bin) == False:
 		print "\n{}.{}.{}.{} in binary is:".format(oct1, oct2, oct3, oct4)
-		print "{0:08b}.{0:08b}.{0:08b}.{0:08b}".format(oct1, oct2, oct3, oct4)
+		print "{:08b}.{:08b}.{:08b}.{:08b}".format(oct1, oct2, oct3, oct4)
 		menu()
 	else:
 		menu()
@@ -66,15 +66,16 @@ def bin2dec():
 	oct2 = randint(0, 255)
 	oct3 = randint(0, 255)
 	oct4 = randint(0, 255)
-	print "\nConvert this IP in decimal: {0:08b}.{0:08b}.{0:08b}.{0:08b}\n".format(oct1, oct2, oct3, oct4)
+	print "\nConvert this IP in decimal: {:08b}.{:08b}.{:08b}.{:08b}\n".format(oct1, oct2, oct3, oct4)
 	sol_bin2dec = raw_input("Press Enter for the solution, any other key for the menu: ")
 	if bool(sol_bin2dec) == False:
-		print "{0:08b}.{0:08b}.{0:08b}.{0:08b}\n".format(oct1, oct2, oct3, oct4)
+		print "\n{:08b}.{:08b}.{:08b}.{:08b} in decimal is:".format(oct1, oct2, oct3, oct4)
 		print "{}.{}.{}.{}".format(oct1, oct2, oct3, oct4)
 		menu()
 	else:
 		menu()
 
+#Network range generator
 def netgen():
 	oct1 = randint(1, 255)
 	oct2 = randint(0, 255)
@@ -82,14 +83,15 @@ def netgen():
 	oct4 = randint(0, 255)
 	bits = 0
 	sm = randint(1, 30)
-	print "Calculate network-address, broadcast-address and range of this subnet:"
+	print "\nCalculate network-address, broadcast-address and range of this subnet:\n"
 	for i in xrange(32-sm,32):
 		bits |= (1 << i)
 	print "{}.{}.{}.{} {}.{}.{}.{}".format(oct1, oct2, oct3, oct4, (bits & 0xff000000) >> 24, (bits & 0xff0000) >> 16, (bits & 0xff00) >> 8 , (bits & 0xff))
-	solnetgen = raw_input("Press any key when finished: ")
+	solnetgen = raw_input("\nPress any key when finished: ")
 	if bool(solnetgen) == False:
 		menu()
 	else:
 		menu()
 
+#Entry point into the program
 menu()
