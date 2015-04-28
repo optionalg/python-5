@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-  ipgenerator.py - Generates random IPs/networks for
+	ipgenerator.py - Generates random IPs/networks for
 	CCNA trainees to learn subnetting and binary conversion
 	
 	Copyright (C) Giorgio Vilardo - 2015
