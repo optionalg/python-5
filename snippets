@@ -1,9 +1,25 @@
-# Dependancy: datetime - Gets actual time, returns a "hh:mm:ss" string
+# Dependancy: datetime - Gets actual time, returns a "hh:mm:ss" string - no single digit correction
 def get_time_now():
     timenow = str(datetime.datetime.now().time().hour) + ":" + str(datetime.datetime.now().time().minute) + ":" + str(datetime.datetime.now().time().second)
     return timenow
 
-# Dependancy: datetime - Gets today date, returns a "dd/mm/yyyy" string
+# Dependancy: datetime - Gets today date, returns a "dd/mm/yyyy" string - no single digit correction
 def get_date_today():
     daynow = str(datetime.datetime.now().date().day) + "/" + str(datetime.datetime.now().date().month) + "/" + str(datetime.datetime.now().date().year)
+    return daynow
+
+# Dependancy: datetime - Gets actual time, returns a "hh:mm:ss" string - with single digit correction
+def get_time_now():
+    hour = "{:02}:".format(datetime.datetime.now().time().hour)
+    min = "{:02}:".format(datetime.datetime.now().time().minute)
+    sec = "{:02}".format(datetime.datetime.now().time().second)
+    timenow = hour + min + sec
+    return timenow
+
+# Dependancy: datetime - Gets today date, returns a "dd/mm/yyyy" string - with single digit correction
+def get_date_today():
+    day = "{:02}/".format(datetime.datetime.now().date().day)
+    month = "{:02}/".format(datetime.datetime.now().date().month)
+    year = "{:04}".format(datetime.datetime.now().date().year)
+    daynow = day + month + year
     return daynow
