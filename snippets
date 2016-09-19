@@ -1,9 +1,9 @@
-import datetime
-
+# Dependancy: datetime - Gets actual time, returns a "hh:mm:ss" string
 def get_time_now():
     timenow = str(datetime.datetime.now().time().hour) + ":" + str(datetime.datetime.now().time().minute) + ":" + str(datetime.datetime.now().time().second)
     return timenow
 
+# Dependancy: datetime - Gets today date, returns a "dd/mm/yyyy" string
 def get_date_today():
     daynow = str(datetime.datetime.now().date().day) + "/" + str(datetime.datetime.now().date().month) + "/" + str(datetime.datetime.now().date().year)
     return daynow
