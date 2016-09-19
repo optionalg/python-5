@@ -1,0 +1,9 @@
+import datetime
+
+def get_time_now():
+    timenow = str(datetime.datetime.now().time().hour) + ":" + str(datetime.datetime.now().time().minute) + ":" + str(datetime.datetime.now().time().second)
+    return timenow
+
+def get_date_today():
+    daynow = str(datetime.datetime.now().date().day) + "/" + str(datetime.datetime.now().date().month) + "/" + str(datetime.datetime.now().date().year)
+    return daynow
