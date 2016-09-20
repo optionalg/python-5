@@ -10,16 +10,16 @@ def get_date_today():
 
 # Dependancy: datetime - Gets actual time, returns a "hh:mm:ss" string - with single digit correction
 def get_time_now():
-    hour = "{:02}:".format(datetime.datetime.now().time().hour)
-    min = "{:02}:".format(datetime.datetime.now().time().minute)
+    hour = "{:02}".format(datetime.datetime.now().time().hour)
+    min = "{:02}".format(datetime.datetime.now().time().minute)
     sec = "{:02}".format(datetime.datetime.now().time().second)
-    timenow = hour + min + sec
+    timenow = hour + ":" + min + ":" + sec
     return timenow
 
 # Dependancy: datetime - Gets today date, returns a "dd/mm/yyyy" string - with single digit correction
 def get_date_today():
-    day = "{:02}/".format(datetime.datetime.now().date().day)
-    month = "{:02}/".format(datetime.datetime.now().date().month)
+    day = "{:02}".format(datetime.datetime.now().date().day)
+    month = "{:02}".format(datetime.datetime.now().date().month)
     year = "{:04}".format(datetime.datetime.now().date().year)
-    daynow = day + month + year
+    daynow = day + "/" + month + "/" + year
     return daynow
